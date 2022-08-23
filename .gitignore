@@ -1,3 +1,6 @@
-TTSCache\
-Voice Assist Modules\
+TTSCache/
+Voice Assist Modules/
+
+
 .env
+.gitignore
