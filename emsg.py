@@ -3,10 +3,13 @@ import ssl
 import smtplib
 import os
 from dotenv import load_dotenv
+from datetime import datetime
+
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
 
 
-
-def semsg():
+def semsg(body):
     email_sender = "manan.kateshiya111006@marwadiuniversity.ac.in"
     load_dotenv()
     email_password = os.getenv('EMAIL_KEY')
@@ -14,8 +17,8 @@ def semsg():
     email_rec = "manankateshiya@gmail.com"
     subject = "Sub"
     body = """ 
-        Test successfull 3
-    """
+        Exact Time of Email: {} {}
+    """.format(current_time, body)
     
     em = EmailMessage()
     em['From'] = email_sender
@@ -29,4 +32,4 @@ def semsg():
         smtp.login(email_sender, email_password)
         smtp.sendmail(email_sender, email_rec, em.as_string())
 
-semsg()
+# semsg(body)
