@@ -1,14 +1,14 @@
 import speech_recognition as sr
 from gtts import gTTS
 from pygame import mixer
-from Email.message import EmailMessage
+from email.message import EmailMessage
 import ssl
 import smtplib
 from emsg import semsg
 
 CACHE_PATH = "S:\\Major Project\\Coding\\TTSCache"
 
-def Emailfunc():
+def emailfunc():
 
 
     #ask for receiver
