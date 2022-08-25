@@ -9,16 +9,16 @@ now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
 
-def semsg(body):
+def semsg(to, sub, body):
     email_sender = "manan.kateshiya111006@marwadiuniversity.ac.in"
     load_dotenv()
     email_password = os.getenv('EMAIL_KEY')
     
-    email_rec = "manankateshiya@gmail.com"
-    subject = "Sub"
+    email_rec = f"{to}"
+    subject = f"{sub}"
     body = """ 
-        Exact Time of Email: {} {}
-    """.format(current_time, body)
+        {}
+    """.format(body)
     
     em = EmailMessage()
     em['From'] = email_sender

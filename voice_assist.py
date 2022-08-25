@@ -1,14 +1,9 @@
 import speech_recognition as sr
 from gtts import gTTS
 from pygame import mixer
-import os
-import wikipedia
 import pyttsx3
-from email.message import EmailMessage
-import ssl
 import smtplib
-from emsg import semsg
-from all_modules import emailfunc
+from all_modules import *
 
 # import pickle
 # def z():
@@ -50,16 +45,9 @@ def takeCommand():
 if __name__ == "__main__":
 
     while True:
-
             message = takeCommand().lower()
             if 'hello' in message:
-                print("working")
-                speech = ('Hello, you look great')
-                tts = gTTS(text=speech, lang='en')
-                tts.save(f'{CACHE_PATH}\\hello.mp3')
-                mixer.init()
-                mixer.music.load(f'{CACHE_PATH}\\hello.mp3')
-                mixer.music.play()
+                greet()
 
             if 'good morning' in message:
                 speech = ('Good Morning, how are you')
