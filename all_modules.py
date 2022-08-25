@@ -10,7 +10,6 @@ CACHE_PATH = "S:\\Major Project\\Coding\\TTSCache"
 
 def emailfunc():
 
-
     #ask for receiver
     tts2 = gTTS(text='who is the Email receiver?', lang='en')
     tts2.save(f'{CACHE_PATH}\\e_rec.mp3')
