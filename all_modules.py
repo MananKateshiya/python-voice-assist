@@ -5,6 +5,7 @@ from email.message import EmailMessage
 import ssl
 import smtplib
 from emsg import semsg
+import os
 
 CACHE_PATH = "S:\\Major Project\\Coding\\TTSCache"
 
@@ -40,7 +41,7 @@ def emailfunc():
         ans_f = askR.listen(sAsk)
     ans = (askR.recognize_google(ans_f)).lower()   
     print(ans) 
-    if ans == 'yes':
+    if 'yes' in ans:
         label1()
         # ra = sr.Recognizer()
         # with sr.Microphone(device_index=1) as source2:
@@ -95,5 +96,12 @@ def greet():
     mixer.music.load(f'{CACHE_PATH}\\hello.mp3')
     mixer.music.play()
 
-
+def shutdown():
+    speech = ('shutting down')
+    tts = gTTS(text=speech, lang='en')
+    tts.save(f'{CACHE_PATH}\\sd.mp3')
+    mixer.init()
+    mixer.music.load(f'{CACHE_PATH}\\sd.mp3')
+    mixer.music.play()
+    os.system("shutdown -s -t 5")
     

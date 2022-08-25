@@ -88,13 +88,7 @@ if __name__ == "__main__":
                 mixer.music.play()
 
             if 'shutdown' in message:
-                speech = ('shutting down')
-                os.system("shutdown -s -t 5")
-                tts = gTTS(text=speech, lang='en')
-                tts.save(f'{CACHE_PATH}\\sd.mp3')
-                mixer.init()
-                mixer.music.load(f'{CACHE_PATH}\\sd.mp3')
-                mixer.music.play()
+                shutdown()
 
             if 'close it' in message:
                 speech = ('ok!')
