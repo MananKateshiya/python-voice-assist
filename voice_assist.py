@@ -17,6 +17,11 @@ from all_modules import *
 # z()
 CACHE_PATH = "S:\\Major Project\\Coding\\TTSCache"
 
+start = gTTS(text="This is your assistant, How can i help you?", lang='en')
+start.save(f'{CACHE_PATH}\\start.mp3')
+mixer.init()
+mixer.music.load(f'{CACHE_PATH}\\start.mp3')
+mixer.music.play()
 
 def takeCommand():
     r = sr.Recognizer()
@@ -49,14 +54,14 @@ if __name__ == "__main__":
             if 'hello' in message:
                 greet()
 
-            if 'good morning' in message:
-                speech = ('Good Morning, how are you')
-                tts = gTTS(text=speech, lang='en-in')
-                tts.save(f'{CACHE_PATH}\\morning_greeting.mp3')
-                mixer.init()
-                mixer.music.load(
-                    f'{CACHE_PATH}\\morning_greeting.mp3')
-                mixer.music.play()
+            # if 'good morning' in message:
+            #     speech = ('Good Morning, how are you')
+            #     tts = gTTS(text=speech, lang='en-in')
+            #     tts.save(f'{CACHE_PATH}\\morning_greeting.mp3')
+            #     mixer.init()
+            #     mixer.music.load(
+            #         f'{CACHE_PATH}\\morning_greeting.mp3')
+            #     mixer.music.play()
 
             if 'what is your name' in message:
                 speech = ('my name is M')
