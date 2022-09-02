@@ -5,16 +5,6 @@ import pyttsx3
 import smtplib
 from all_modules import *
 
-# import pickle
-# def z():
-#     engine = pyttsx3.init('sapi5')
-#     voices = engine.getProperty('voice')
-#     engine.setProperty('voice', voices[2])
-#     engine.say("hello world")
-#     engine.runAndWait()
-
-
-# z()
 CACHE_PATH = "S:\\Major Project\\Coding\\TTSCache"
 
 start = gTTS(text="This is your assistant, How can i help you?", lang='en')
@@ -54,15 +44,6 @@ if __name__ == "__main__":
             if 'hello' in message:
                 greet()
 
-            # if 'good morning' in message:
-            #     speech = ('Good Morning, how are you')
-            #     tts = gTTS(text=speech, lang='en-in')
-            #     tts.save(f'{CACHE_PATH}\\morning_greeting.mp3')
-            #     mixer.init()
-            #     mixer.music.load(
-            #         f'{CACHE_PATH}\\morning_greeting.mp3')
-            #     mixer.music.play()
-
             if 'what is your name' in message:
                 speech = ('my name is M')
                 tts = gTTS(text=speech, lang='en')
@@ -71,16 +52,8 @@ if __name__ == "__main__":
                 mixer.music.load(f'{CACHE_PATH}\\ok.mp3')
                 mixer.music.play()
 
-            if 'what is my name' in message:
-                speech = ('Your name is Manan, sir')
-                tts = gTTS(text=speech, lang='en')
-                tts.save(f'{CACHE_PATH}\\myname.mp3')
-                mixer.init()
-                mixer.music.load(f'{CACHE_PATH}\\mdyname.mp3')
-                mixer.music.play()
-
             if 'thank you' in message:
-                speech = ('Your welcome sir')
+                speech = ('Your welcome')
                 tts = gTTS(text=speech, lang='en')
                 tts.save(f'{CACHE_PATH}\\thx.mp3')
                 mixer.init()
@@ -103,4 +76,24 @@ if __name__ == "__main__":
                 emailfunc()
 
 
-        
+
+# import pickle
+# def z():
+#     engine = pyttsx3.init('sapi5')
+#     voices = engine.getProperty('voice')
+#     engine.setProperty('voice', voices[2])
+#     engine.say("hello world")
+#     engine.runAndWait()
+
+
+# z()    
+
+
+# if 'good morning' in message:
+#     speech = ('Good Morning, how are you')
+#     tts = gTTS(text=speech, lang='en-in')
+#     tts.save(f'{CACHE_PATH}\\morning_greeting.mp3')
+#     mixer.init()
+#     mixer.music.load(
+#         f'{CACHE_PATH}\\morning_greeting.mp3')
+#     mixer.music.play()
